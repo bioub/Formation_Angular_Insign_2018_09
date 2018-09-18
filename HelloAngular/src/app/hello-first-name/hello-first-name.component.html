@@ -1,0 +1,28 @@
+<div [ngClass]="{empty: firstName.length === 0}">
+  <input [value]="firstName" (input)="firstName = $event.target.value">
+</div>
+
+<div>
+  <input [value]="firstName" (input)="firstName = firstNameElt.value" #firstNameElt>
+</div>
+
+<div>
+  <input [ngModel]="firstName" (ngModelChange)="firstName = $event">
+</div>
+
+<div>
+  <input [(ngModel)]="firstName">
+</div>
+
+<p *ngIf="firstName">
+  Hello {{firstName}} !
+</p>
+
+<!--
+<ng-template ngIf [ngIf]="firstName" [ngIfElse]="pasDePrenom">
+  Hello {{firstName}} !
+</ng-template>
+<ng-template #pasDePrenom>
+  Pas de prénom (ng-template)
+</ng-template>
+-->

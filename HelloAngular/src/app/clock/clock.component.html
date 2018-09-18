@@ -1,0 +1,5 @@
+<p>{{ now | date:'HH:mm:ss' }}</p>
+<input bind-value="now | date:'HH:mm:ss'">
+<input [value]="now | date:'HH:mm:ss'">
+<p [innerText]="now | date:'HH:mm:ss'"></p>
+<time [attr.aria-value-text]="now | date:'HH:mm:ss'"></time>

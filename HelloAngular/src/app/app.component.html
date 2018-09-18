@@ -1,0 +1,12 @@
+<in-clock></in-clock>
+<hr>
+<in-button-counter></in-button-counter>
+<hr>
+<in-hello-first-name></in-hello-first-name>
+<hr>
+<in-color-dropdown [colors]="['Bleu', 'Rose']" [(color)]="bgColor"></in-color-dropdown>
+{{bgColor}}
+<hr>
+<in-color-dropdown [colors]="['Bleu', 'Rose']" [color]="bgColor" (colorChange)="bgColor = $event"></in-color-dropdown>
+{{bgColor}}
+<hr>
