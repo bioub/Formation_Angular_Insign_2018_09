@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-
-import { ContactsRoutingModule } from './contacts-routing.module';
-import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsShowComponent } from './contacts-show/contacts-show.component';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsAddComponent } from './contacts-add/contacts-add.component';
-import { SharedModule } from '../shared/shared.module';
+import { ContactsComponent } from './contacts.component';
+import { SharedModule } from './../shared/shared.module';
+import { ContactsRoutingModule } from './contacts-routing.module';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
   ],
   declarations: [
+    ContactsComponent,
     ContactsAddComponent,
     ContactsListComponent,
     ContactsShowComponent,

@@ -7,6 +7,7 @@ import { ClockComponent } from './clock/clock.component';
 import { ButtonCounterComponent } from './button-counter/button-counter.component';
 import { HelloFirstNameComponent } from './hello-first-name/hello-first-name.component';
 import { ColorDropdownComponent } from './color-dropdown/color-dropdown.component';
+import { ClockObservableComponent } from './clock-observable/clock-observable.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ColorDropdownComponent } from './color-dropdown/color-dropdown.componen
     ButtonCounterComponent,
     HelloFirstNameComponent,
     ColorDropdownComponent,
+    ClockObservableComponent,
   ],
   imports: [
     FormsModule,

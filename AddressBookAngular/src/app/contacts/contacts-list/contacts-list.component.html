@@ -1,3 +1,53 @@
-<p>
-  contacts-list works!
-</p>
+<!-- 1 - si contact undefined ngIf fait que les balises n'apparaissent pas
+<ng-container *ngIf="contacts">
+  <ul>
+    <li *ngFor="let c of contacts">
+      {{c.name}}
+    </li>
+  </ul>
+  <p>{{contacts.length}} contacts</p>
+</ng-container>
+ -->
+
+<!-- 2 - si contact undefined ? empeche l'exécution du reste (.length ici)
+<ul>
+  <li *ngFor="let c of contacts">
+    {{c.name}}
+  </li>
+</ul>
+<p>{{contacts?.length}} contacts</p>
+ -->
+
+<!--
+  3 - utiliser le pipe async pour souscrire au niveau du template
+    -> avantage donne l'impression dans le TS que le code est synchrone
+    ->          async unsubscribe automatiquement
+    -> inconvenient le subscribe se fait plusieurs fois (et dans le cas d'une requete
+    , la requete aussi), faudrait utiliser un Subject de rxjs pour mettre en cache
+    les données
+
+<ul>
+  <li *ngFor="let c of contacts$ | async">
+    {{c.name}}
+  </li>
+</ul>
+<p>{{(contacts$ | async)?.length}} contacts</p>
+-->
+
+<!--
+  4 - on subscribe une seule fois et on met dans une variable
+-->
+<ng-container *ngIf="contacts$ | async as contacts">
+  <ul>
+    <li *ngFor="let c of contacts">
+      <a [routerLink]="[c.id]">{{c.name}}</a>
+    </li>
+  </ul>
+  <p>{{contacts.length}} contacts</p>
+</ng-container>
+
+<!-- 5
+  Créer un composant d'ui pour afficher la liste et lui passer en input le
+  résultat de l'observable
+  <in-contacts-list-container [contacts]="contacts$ | async"></<in-contacts-list-container>
+-->
