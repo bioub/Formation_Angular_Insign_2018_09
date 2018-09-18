@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "HelloAngular"
+		},
+		{
+			"path": "TodoAngular"
+		},
+		{
+			"path": "AddressBookAngular"
+		}
+	],
+	"settings": {}
+}

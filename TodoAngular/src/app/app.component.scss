@@ -1,0 +1,13 @@
+@import './block';
+
+:host {
+  @extend .block;
+  width: 50%;
+  margin: 2em auto;
+}
+
+::ng-deep {
+  todo-item {
+    display: block;
+  }
+}

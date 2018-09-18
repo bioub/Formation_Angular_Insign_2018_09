@@ -1,0 +1,15 @@
+<ul>
+  <li>
+    <a [routerLink]="'/contacts'"
+       [routerLinkActiveOptions]="{exact: true}"
+       [routerLinkActive]="'active'">List</a>
+  </li>
+  <li>
+    <a [routerLink]="['contacts']"
+       [routerLinkActiveOptions]="{exact: true}"
+       routerLinkActive="active">List</a>
+  </li>
+  <li>
+    <a routerLink="/contacts/add" routerLinkActive="active">Add</a>
+  </li>
+</ul>
