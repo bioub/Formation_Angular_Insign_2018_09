@@ -1,1 +1,4 @@
-<todo-item *ngFor="let todo of todos; trackBy: getTodoId" [todo]="todo"></todo-item>
+<todo-item
+ *ngFor="let todo of todos; trackBy: getTodoId"
+ [todo]="todo"
+ (delete)="deleteTodo($event)"></todo-item>

@@ -1,5 +1,5 @@
 import { Todo } from './../models/Todo';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'todo-form',

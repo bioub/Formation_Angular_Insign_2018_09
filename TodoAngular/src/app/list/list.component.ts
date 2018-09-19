@@ -20,4 +20,9 @@ export class ListComponent implements OnInit {
   getTodoId(i, todo) {
     return todo.id;
   }
+
+  deleteTodo(todo) {
+    const i = this.todos.indexOf(todo);
+    this.todos.splice(i, 1);
+  }
 }
