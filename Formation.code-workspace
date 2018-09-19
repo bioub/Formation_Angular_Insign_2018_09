@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "AddressBookAngular"
+		},
+		{
+			"path": "todo-angular-test"
 		}
 	],
 	"settings": {}
