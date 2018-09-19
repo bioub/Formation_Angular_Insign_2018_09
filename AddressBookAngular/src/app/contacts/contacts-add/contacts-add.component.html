@@ -1,3 +1,19 @@
-<p>
-  contacts-add works!
-</p>
+<form (submit)="formNgForm.valid && onSubmit()" #formNgForm="ngForm">
+  <p [ngClass]="{error: nameNgModel.invalid && (nameNgModel.touched || formNgForm.submitted)}">
+    Name: <input [(ngModel)]="contact.name" name="name" required #nameNgModel="ngModel">
+    <span *ngIf="nameNgModel.invalid && (nameNgModel.touched || formNgForm.submitted)">
+      Name is required
+    </span>
+  </p>
+  <p>
+    Email: <input type="email" [(ngModel)]="contact.email" name="email" required email #emailNgModel="ngModel">
+    <span *ngIf="emailNgModel?.errors?.required">Email is required</span>
+    <span *ngIf="emailNgModel?.errors?.email">Email format is not valid</span>
+  </p>
+  <p>
+    Phone: <input [(ngModel)]="contact.phone" name="phone">
+  </p>
+  <p>
+    <button>+</button>
+  </p>
+</form>

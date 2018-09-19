@@ -1,3 +1,9 @@
-<p>
-  contacts-show works!
-</p>
+<ng-container *ngIf="contact$ | async as contact; else noContact">
+  <p>Name: {{contact.name}}</p>
+  <p *ngIf="contact.email">Email: {{contact.email}}</p>
+  <p *ngIf="contact.phone">Phone: {{contact.phone}}</p>
+</ng-container>
+
+<ng-template #noContact>
+  Loading Contact...
+</ng-template>

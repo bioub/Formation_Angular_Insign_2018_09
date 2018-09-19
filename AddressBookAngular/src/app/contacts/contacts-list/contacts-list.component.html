@@ -37,7 +37,7 @@
 <!--
   4 - on subscribe une seule fois et on met dans une variable
 -->
-<ng-container *ngIf="contacts$ | async as contacts">
+<ng-container *ngIf="contacts$ | async as contacts; else loading">
   <ul>
     <li *ngFor="let c of contacts">
       <a [routerLink]="[c.id]">{{c.name}}</a>
@@ -45,6 +45,10 @@
   </ul>
   <p>{{contacts.length}} contacts</p>
 </ng-container>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
 
 <!-- 5
   Créer un composant d'ui pour afficher la liste et lui passer en input le
